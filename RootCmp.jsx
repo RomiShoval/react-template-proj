@@ -24,8 +24,8 @@ export function RootCmp() {
                 {/* <AnimalList animalProps={animalProps} />  */}
                 {/* <SeasonClock/> */}
                 {/* <CountDown startFrom={10} onDone={handelCountDownEnd}/> */}
-                {/* <WatcherList /> */}
-                <MouseMonitor/>
+                <WatcherList />
+                {/* <MouseMonitor/> */}
             </main>
         </section>
     )
