@@ -67,7 +67,7 @@ export function WatcherList(){
               {watchers.map((watcher, index) => (
                   <div key={watcher.id} className="watcher-card">
                       <div className={`avatar-container ${backgroundClasses[index % backgroundClasses.length]}`}>
-                          <img src={"/assets/img/watcher.png"} alt="Watcher Avatar" className="avatar-img" />
+                          <img src={"/react-template-proj/assets/img/watcher.png"} alt="Watcher Avatar" className="avatar-img" />
                       </div>
                       <h3 className="watcher-name">{watcher.name || "Unnamed Watcher"}</h3>
                       <div className="buttons-container">

@@ -29,10 +29,10 @@ export function SeasonClock(){
 
     const season = getSeason(time.getMonth()).toLowerCase();
     const seasonImages = {
-        winter: "/season-imgs/winter.png",
-        spring: "/season-imgs/spring.png",
-        summer: "/season-imgs/summer.png",
-        autumn: "/season-imgs/autumn.png"
+        winter: "/react-template-proj/season-imgs/winter.png",
+        spring: "/react-template-proj/season-imgs/spring.png",
+        summer: "/react-template-proj/season-imgs/summer.png",
+        autumn: "/react-template-proj/season-imgs/autumn.png"
     };
 
     return(
