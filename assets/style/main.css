@@ -1,0 +1,503 @@
+/* Setup */
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* Vars */
+:root {
+	--clr1: rgb(96, 107, 91);
+	--clr2: rgb(120, 99, 110);
+
+	--clr1bg: rgb(153, 166, 149);
+	--clr1bg-light: rgb(205, 221, 200);
+	--clr2bg: rgb(233, 206, 221);
+	--clr2bg-light: rgb(253, 236, 246);
+
+	--gray1: rgb(240, 240, 240);
+	--gray2: rgb(155, 155, 155);
+	--gray3: rgb(44, 44, 44);
+}
+
+
+/* Base */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	color: var(--gray3);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: .5em 0 .5em;
+	font-family: 'Edu VIC WA NT Beginner', cursive;
+}
+
+p {
+	margin: 0 0 1em;
+}
+
+a {
+	text-decoration: none;
+	color: unset;
+	cursor: pointer;
+}
+
+
+
+/* Dont stretch my Media */
+img,
+embed,
+video,
+object {
+	max-width: 100%
+}
+
+/* Simple and useful CSS Debugging Technique */
+.debug * {
+	outline: 1px solid gold
+}
+
+
+.about nav a {
+	margin-right: 10px;
+}
+
+button {
+	cursor: pointer;
+	background-color: var(--clr2bg);
+	margin: 0.5em;
+	border: 0;
+	padding: 0.5em 0.8em;
+	border-radius: 4px;
+}
+
+button:hover {
+	background-color: var(--clr2);
+	color: white;
+	transition: 0.3s;
+}
+
+input:focus {
+	background-color: var(--clr1bg);
+	transition: background-color 1s;
+}
+
+
+/* Helpers */
+
+/* flex helpers */
+
+.flex {
+	display: flex;
+}
+
+.flex.flex-column {
+	flex-direction: column;
+}
+
+.flex.justify-center {
+	justify-content: center;
+}
+
+.flex.justify-between {
+	justify-content: space-between;
+}
+
+.flex.align-center {
+	align-items: center;
+}
+
+/* text helpers */
+
+.colored-text {
+	color: var(--clr1);
+}
+
+/* list helpers */
+
+.clean-list {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+/* font awsome */
+
+.fa {
+	font-family: fa;
+}
+
+.fa.fa-facebook::before {
+	content: "\f39e";
+}
+
+.fa.fa-twitter::before {
+	content: "\f099";
+}
+
+.fa.fa-dribbble::before {
+	content: "\f17d";
+}
+
+.fa.fa-behance::before {
+	content: "\f1b4";
+}
+
+/* Layout */
+.main-layout {
+	display: grid;
+	grid-template-columns: 1.6rem 1fr 1.6rem;
+}
+
+.main-layout>* {
+	grid-column: 2;
+}
+
+.main-layout .full {
+	grid-column: 1/-1;
+}
+
+.container {
+	max-width: 800px;
+	padding: 1em;
+	margin: auto;
+}
+
+
+
+/* Components */
+
+.home {
+	font-size: 1em;
+}
+
+.app-header {
+	background-color: var(--clr1);
+	color: var(--clr2bg-light);
+
+}
+
+.header-container {
+	display: flex;
+	align-items: center;
+
+}
+
+.header-container h1 {
+	flex-grow: 1;
+}
+
+.app-nav {
+	display: flex;
+	gap: 15px;
+}
+
+
+a.active {
+	color: rgb(241, 212, 241);
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+
+@media (max-width: 720px) {
+	.app-header {
+		color: var(--clr2bg-light);
+	}
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #8B2E2E; /* Dark red background */
+    color: white;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-size: 20px;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #6B1E1E; /* Slightly darker red for headers */
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+td a {
+    color: blue;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+td a:hover {
+    color: darkblue;
+}
+
+h1 {
+    color: white;
+    background-color: #8B2E2E;
+    padding: 10px;
+    font-size: 28px;
+    text-align: left;
+}
+/* season */
+
+/* .season-clock {
+    width: 200px;
+    height: 250px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.5s, color 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px solid white;
+}
+
+.season-clock.dark {
+    background-color: darkblue;
+    color: white;
+}
+
+.season-clock.light {
+    background-color: lightblue;
+    color: black;
+}
+
+.season-clock img {
+    width: 80px;
+    height: 80px;
+} */
+
+/* countDown */
+
+/* .countDown{
+	font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.countDown.red{
+	color:red
+}
+
+.watcher-list {
+    text-align: center;
+    max-width: 400px;
+    margin: auto;
+}
+
+.add-btn {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #f4f4f4;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+li span {
+    flex: 1;
+}
+
+button {
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+} */
+
+/* watcher */
+
+.container {
+	position: relative;
+	padding: 16px;
+	background-color: #f5c6c6;
+	text-align: center;
+  }
+  
+  .title {
+	font-size: 24px;
+	font-weight: bold;
+  }
+  
+  .add-button {
+	display: block;
+	margin: 16px auto;
+	padding: 8px 16px;
+	background-color: #3498db;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+  }
+  
+  .watchers-container {
+	display: flex;
+	justify-content: center;
+	gap: 16px;
+  }
+  
+  .watcher-card {
+	background-color: white;
+	padding: 16px;
+	text-align: center;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .avatar {
+	font-size: 48px;
+  }
+  
+  .watcher-name {
+	font-weight: bold;
+	margin: 8px 0;
+  }
+  
+  .remove-button {
+	background-color: #e74c3c;
+	color: white;
+	border: none;
+	padding: 4px 8px;
+	cursor: pointer;
+	border-radius: 4px;
+  }
+  
+  .select-button {
+	background-color: #bdc3c7;
+	padding: 4px 8px;
+	border-radius: 4px;
+	margin-left: 8px;
+	cursor: pointer;
+  }
+  
+  .modal {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background-color: #c0392b;
+	color: white;
+	padding: 16px;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	width: 150px;
+	font-size: 14px;
+  }
+  .modal h3 {
+	font-style: italic;
+	font-weight: bold;
+	font-size: 16px;
+  }
+
+  .modal ul {
+	padding-left: 10px;
+	font-size: 13px;
+  }
+  
+  .close-button {
+	margin-top: 8px;
+	background-color: #ecf0f1;
+	padding: 8px 16px;
+	border-radius: 4px;
+	cursor: pointer;
+  }
+
+  /* MouseMonitor */
+  .tracker-container {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	background-color: black;
+	color: white;
+	padding: 15px;
+	border-radius: 10px;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	min-width: 150px;
+  }
+  
+  .button-container {
+	margin-top: 10px;
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+  }
+  
+  .pause-btn, .resume-btn {
+	padding: 8px 15px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 14px;
+  }
+  
+  .pause-btn {
+	background-color: red;
+	color: white;
+  }
+  
+  .resume-btn {
+	background-color: green;
+	color: white;
+  }
+  
+  .pause-btn:hover {
+	background-color: darkred;
+  }
+  
+  .resume-btn:hover {
+	background-color: darkgreen;
+  }
