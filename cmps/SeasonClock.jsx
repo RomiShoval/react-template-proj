@@ -1,6 +1,6 @@
 const { useState, useEffect } = React
 import "../assets/style/SeasonClock.css"
-import winterImg from "../season-imgs/winter.png"
+import winterImg from '../season-imgs/winter.png';
 import springImg from "../season-imgs/spring.png";
 import summerImg from "../season-imgs/summer.png";
 import autumnImg from "../season-imgs/autumn.png";
