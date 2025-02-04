@@ -1,0 +1,45 @@
+.tracker-container {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	background-color: black;
+	color: white;
+	padding: 15px;
+	border-radius: 10px;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	min-width: 150px;
+  }
+  
+  .button-container {
+	margin-top: 10px;
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+  }
+  
+  .pause-btn, .resume-btn {
+	padding: 8px 15px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 14px;
+  }
+  
+  .pause-btn {
+	background-color: red;
+	color: white;
+  }
+  
+  .resume-btn {
+	background-color: green;
+	color: white;
+  }
+  
+  .pause-btn:hover {
+	background-color: darkred;
+  }
+  
+  .resume-btn:hover {
+	background-color: darkgreen;
+  }

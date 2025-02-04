@@ -1,0 +1,30 @@
+.countDown {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px; /* Adjust as needed */
+    height: 80px;  /* Adjust for proportion */
+    background-color: lightblue; /* Matches image */
+    border: 8px solid blue; /* Outer border */
+    position: relative;
+    color: black; /* Default text color */
+}
+
+
+.countDown.red {
+    color: red; /* Red text when <= 5 seconds */
+}
+
+
+.inner-box {
+    width: 90%;
+    height: 60%;
+    background-color: lightblue;
+    border: 5px solid blue; /* Inner border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

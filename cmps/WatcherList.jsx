@@ -1,5 +1,6 @@
 const { useState, useEffect } = React
 import { watchersService } from "../services/watchersService.service.js";
+import "../assets/style/WatcherList.css"
 
 export function WatcherList(){
     const[watchers , setWatchers] = useState([]);
@@ -8,7 +9,7 @@ export function WatcherList(){
     useEffect(() => {
         const fetchWatchers = async () => {
           let storedWatchers = await watchersService.loadFromStorage("watchers");
-          if(storedWatchers.length ===0){
+          if(!storedWatchers || storedWatchers.length ===0){
             storedWatchers = [
                 { id: "w101", name: "Puki Ba", movies: ["Rambo", "Rocky"] },
                 { id: "w102", name: "Muki Da", movies: ["Avengers", "Inception"] },
@@ -48,49 +49,45 @@ export function WatcherList(){
         }
     }
 
-
+    
 
     function removeWatcher(id){
         setWatchers(watchers.filter((watcher) => watcher.id !== id));
     };
 
-    
+    const backgroundClasses = ["bg-gray", "bg-green", "bg-red"];
 
     return(
-        <div className="container">
-      <h2 className="title">Watcher App</h2>
-      <button onClick={addWatcher} className="add-button">
-        Add Watcher
-      </button>
+      <div className="container">
+          <h2 className="title">Watcher App</h2>
+          <button onClick={addWatcher} className="add-button">Add Watcher</button>
 
-      <div className="watchers-container">
-        {watchers.map((watcher) => (
-          <div key={watcher.id} className="watcher-card">
-            <div className="avatar">😎</div>
-            <h3 className="watcher-name">{watcher.name || "Unnamed Watcher"}</h3>
-            <button onClick={() => removeWatcher(watcher.id)} className="remove-button">
-              x
-            </button>
-            <button onClick={() => setSelectedWatcher(watcher)} className="select-button">
-              Select
-            </button>
+          <div className="watchers-container">
+              {watchers.map((watcher, index) => (
+                  <div key={watcher.id} className="watcher-card">
+                      <div className={`avatar-container ${backgroundClasses[index % backgroundClasses.length]}`}>
+                          <img src="../assets/img/watcher.png" alt="Watcher Avatar" className="avatar-img" />
+                      </div>
+                      <h3 className="watcher-name">{watcher.name || "Unnamed Watcher"}</h3>
+                      <div className="buttons-container">
+                          <button onClick={() => removeWatcher(watcher.id)} className="remove-button">🗑</button>
+                          <button onClick={() => setSelectedWatcher(watcher)} className="select-button">Select</button>
+                      </div>
+                  </div>
+              ))}
           </div>
-        ))}
+
+          {selectedWatcher && (
+              <div className="modal">
+                  <h3>{selectedWatcher.name}</h3>
+                  <ul>
+                      {selectedWatcher.movies.map((movie, index) => (
+                          <li key={index}>{movie}</li>
+                      ))}
+                  </ul>
+                  <button onClick={() => setSelectedWatcher(null)} className="close-button">Close</button>
+              </div>
+          )}
       </div>
-      {selectedWatcher && (
-        <div className="modal">
-          <h3>{selectedWatcher.name}</h3>
-          <ul>
-            {selectedWatcher.movies.map((movie, index) => (
-              <li key={index}>{movie}</li>
-            ))}
-          </ul>
-          <button onClick={() => setSelectedWatcher(null)} className="close-button">
-            Close
-          </button>
-        </div>
-      )}
-      
-    </div>
-    )
+  );
 }

@@ -1,4 +1,5 @@
 const { useState, useEffect } = React
+import "../assets/style/CountDown.css"
 
 export function CountDown({startFrom ,onDone})
 {
@@ -21,7 +22,7 @@ export function CountDown({startFrom ,onDone})
 
     return(
         <div className = {`countDown ${time <= 5 ? "red" : ""}`}>
-            {time} seconds
+            <div className="inner-box">{time}</div>
         </div>
     );
 }

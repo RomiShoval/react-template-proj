@@ -1,4 +1,4 @@
-
+import "../assets/style/AnimalList.css"
 const { useState, useEffect } = React
 export function AnimalList({animalProps=[]}){
     return (

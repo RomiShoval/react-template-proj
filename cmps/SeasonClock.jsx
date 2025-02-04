@@ -1,4 +1,5 @@
 const { useState, useEffect } = React
+import "../assets/style/SeasonClock.css"
 
 export function SeasonClock(){
     const [time,setTime] = useState(new Date());
@@ -31,13 +32,14 @@ export function SeasonClock(){
     };
 
     return(
-        <div className={`season-clock ${isDark ? "dark" : "light"}`} onClick={toggleTheme}>
-            {/* <h2>{getSeason(time.getMonth())}</h2> */}
-            <h2>{time.toLocaleString("en-US", { month: "long" })} ({season.charAt(0).toUpperCase() + season.slice(1)})</h2>
-            <img src={seasonImages[season]} />
-            <h3>{time.toLocaleString("en-US", { weekday: "long" })}</h3>
-            {/* <h1>{time.toLocaleTimeString()}</h1> */}
-            {/* <p>Click to toggle theme</p> */}
+        <div className="season-clock-container">
+            <div className={`season-clock ${isDark ? "dark" : "light"}`} onClick={toggleTheme}>
+                <h2>{getSeason(time.getMonth())}</h2>
+                <h2>{time.toLocaleString("en-US", { month: "long" })} ({season.charAt(0).toUpperCase() + season.slice(1)})</h2>
+                <img src={seasonImages[season]} />
+                <h3>{time.toLocaleString("en-US", { weekday: "long" })}</h3>
+                <h1>{time.toLocaleTimeString()}</h1>
+            </div>
         </div>
     );
 }

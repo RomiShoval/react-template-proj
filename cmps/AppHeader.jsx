@@ -1,4 +1,4 @@
-
+import "../assets/style/AppHeader.css"
 export function AppHeader() {
 
     return (

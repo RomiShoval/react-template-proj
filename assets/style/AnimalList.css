@@ -1,0 +1,39 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #8B2E2E; /* Dark red background */
+    color: white;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-size: 20px;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #6B1E1E; /* Slightly darker red for headers */
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+td a {
+    color: blue;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+td a:hover {
+    color: darkblue;
+}
+
+h1 {
+    color: white;
+    background-color: #8B2E2E;
+    padding: 10px;
+    font-size: 28px;
+    text-align: left;
+}

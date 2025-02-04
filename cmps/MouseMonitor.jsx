@@ -1,4 +1,5 @@
 const { useState, useEffect } = React
+import "../assets/style/MouseMonitor.css"
 
 export function MouseMonitor(){
     const [isOn, setIsOn] = useState(true);

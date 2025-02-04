@@ -1,0 +1,21 @@
+.app-header {
+    background-color: var(--clr-primary);
+    color: var(--clr-bg-light);
+    padding: 10px;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-style: italic;
+    width: 100%;
+    max-width: 100%;
+}
+
+.app-header h1 {
+    font-family: "Edu VIC WA NT Beginner", cursive;
+    font-size: 1.8rem;
+    font-style: italic;
+    font-weight: bold;
+    color: black;
+    background-color: var(--clr-bg-light);
+    text-align: center;
+}

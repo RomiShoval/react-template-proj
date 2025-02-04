@@ -1,4 +1,5 @@
 const { useState, useEffect } = React
+import "../assets/style/Home.css"
 
 export function Home() {
     return (
