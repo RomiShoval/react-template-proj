@@ -1,9 +1,9 @@
 const { useState, useEffect } = React
 import "../assets/style/SeasonClock.css"
 import winterImg from "../season-imgs/winter.png"
-import springImg from "../assets/img/spring.png";
-import summerImg from "../assets/img/summer.png";
-import autumnImg from "../assets/img/autumn.png";
+import springImg from "../season-imgs/spring.png";
+import summerImg from "../season-imgs/summer.png";
+import autumnImg from "../season-imgs/autumn.png";
 
 export function SeasonClock(){
     const [time,setTime] = useState(new Date());
