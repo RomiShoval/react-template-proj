@@ -1,7 +1,7 @@
 const { useState, useEffect } = React
 import { watchersService } from "../services/watchersService.service.js";
 import "../assets/style/WatcherList.css"
-import watcherImg from "../assets/img/watcher.png"
+//import watcherImg from "../assets/img/watcher.png"
 
 export function WatcherList(){
     const[watchers , setWatchers] = useState([]);
@@ -67,7 +67,7 @@ export function WatcherList(){
               {watchers.map((watcher, index) => (
                   <div key={watcher.id} className="watcher-card">
                       <div className={`avatar-container ${backgroundClasses[index % backgroundClasses.length]}`}>
-                          <img src={watcherImg} alt="Watcher Avatar" className="avatar-img" />
+                          <img src={"/assets/img/watcher.png"} alt="Watcher Avatar" className="avatar-img" />
                       </div>
                       <h3 className="watcher-name">{watcher.name || "Unnamed Watcher"}</h3>
                       <div className="buttons-container">
